@@ -23,6 +23,10 @@
   "contributors": [
     {
       "name": "Cody Stoltman"
+    },
+    {
+      "name": "Chris Nesbitt-Smith",
+      "email": "chris@cns.me.uk"
     }
   ],
   "license": "MIT",
