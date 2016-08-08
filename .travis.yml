@@ -1,4 +1,13 @@
 language: node_js
 node_js:
-  - "0.11"
-  - "0.10"
+- 4.2.2
+before_deploy:
+  - npm --no-git-tag-version version 1.0.$TRAVIS_BUILD_NUMBER
+deploy:
+  provider: npm
+  email: chris@cns.me.uk
+  api_key:
+    secure: SODnRvsd7Be8omO69zFnx57kvXaN9DxB1qW1Cf1MgxJ1eaa0W5yUDPxhZRDPsClMEbNwcju3aQhOTDvS3q8iVEXENhnZFdVipyzzDlHJ55NLtPmNqYuskovRQP07m9QbZPwl76J9TC3gHU/gBWdM7I3rvURAA8B/MrK3VoDt8gFGIWE297T/w+yaqhnZBC1SniWZdCuOcO6ho0AwXj0sxCHNsGzxArPo+RvXRJpEsBSbM+8wxttNRCob8u82e6XypsNAWYF9dSlEXWuukjY67mYnUlM2dFOARJX5zG25OfF5rkrV0z1OOte0mIQwV4RkkqJ3WSsxCrygoYXUbCHCuYHX4KM58wGAUtNYMjeQL2AS2ApB4l8HSOOVsjyRKw0UuQl0PDE+rjwYVx7Gu6i9bAEMyL+3jSeSjskga02mo8+FjdSpMqI38A1vFdRoXkDLWKSdBHLr3siuBV+vpSxEs4An+xqq5rZsrC4q60g5kJ8CxJuSPxZix3W8svUA8v6/VQq9vu0DdELphIvyplBgv3pYGTtUt6oHlFkcGoR3W2taRqhzlMDJF4BY6JdtUkpWuDiwxYJeh8n7c88XV4TBeP1ayAsSLZ/QE7CibGMRdI+pxYU7nBXln0u5wDpQNXiRvpwaAGUdlRBjzcR0g/r8V+E29uKdVxvY1IEVnaj5n1o=
+  on:
+    repo: chrisns/sails-memory
+    node_js: 4.2.2
