@@ -22,7 +22,7 @@ var setupFixtures = _.once(() => new Promise(function (resolve) {
     'port'
   ], function (err) {
     if (err) throw err;
-    Sails.adapters['sails-memory'].saveState('test');
+    Sails.adapters['sails-memory-restorable'].saveState('test');
     resolve();
   });
 
@@ -32,7 +32,7 @@ var setupFixtures = _.once(() => new Promise(function (resolve) {
 module.exports = {
   beforeEach: () => setupFixtures()
       .then(() => {
-        Sails.adapters['sails-memory'].restoreState('test');
+        Sails.adapters['sails-memory-restorable'].restoreState('test');
       });
   }
 };
