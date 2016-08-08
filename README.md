@@ -7,7 +7,7 @@ Tested with Sails 0.9
 ## Extract from my bootstrap.test.js
 This populates barrels with the fixtures, saves the states and then saves the state restoring it before running each test
 
-```
+```js
 var setupFixtures = _.once(() => new Promise(function (resolve) {
   barrels.populate([
     'centres',

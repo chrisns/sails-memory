@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/balderdashy/sails-memory.git"
+    "url": "git://github.com/chrisns/sails-memory.git"
   },
   "keywords": [
     "waterline",
