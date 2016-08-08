@@ -4,6 +4,42 @@
 
 Tested with Sails 0.9
 
+## Extract from my bootstrap.test.js
+This populates barrels with the fixtures, saves the states and then saves the state restoring it before running each test
+
+```
+var setupFixtures = _.once(() => new Promise(function (resolve) {
+  barrels.populate([
+    'centres',
+    'subjects',
+    'movement',
+    'detainee',
+    'event',
+    'heartbeat',
+    'prebooking',
+    'bed',
+    'bedevent',
+    'port'
+  ], function (err) {
+    if (err) throw err;
+    Sails.adapters['sails-memory'].saveState('test');
+    resolve();
+  });
+
+}));
+
+
+module.exports = {
+  beforeEach: () => setupFixtures()
+      .then(() => {
+        Sails.adapters['sails-memory'].restoreState('test');
+      });
+  }
+};
+
+```
+
+
 An in-memory object store which works great as a bundled, starter database (with the strict caveat that it is for non-production use only).
 
 ## About Sails.js

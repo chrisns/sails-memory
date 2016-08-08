@@ -1,5 +1,5 @@
 {
-  "name": "sails-memory",
+  "name": "sails-memory-restorable",
   "version": "0.10.7",
   "description": "Non-persistent in-memory adapter for Sails.js / Waterline",
   "main": "lib/adapter.js",
